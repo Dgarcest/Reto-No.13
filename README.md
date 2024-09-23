@@ -24,6 +24,34 @@ if __name__ == "__main__":
 
 ## 2. Desarrollar una función que reciba dos diccionarios como parámetros y los mezcle, es decir, que se construya un nuevo diccionario con las llaves de los dos diccionarios; si hay una clave repetida en ambos diccionarios, se debe asignar el valor que tenga la clave en el primer diccionario.
 
+```python
+"""2. Desarrollar una función que reciba dos diccionarios como parámetros y los mezcle, es decir, que se construya un nuevo 
+diccionario con las llaves de los dos diccionarios; si hay una clave repetida en ambos diccionarios, se debe asignar el valor 
+que tenga la clave en el primer diccionario.
+"""
+
+def mezclar_diccionarios(diccionario1, diccionario2):
+    #Funcion para mezclar las llaves de los dos diccionarios creando uno nuevo
+    
+    #Se crea una copia del diccionario que funcionara como la union de los 2 diccionarios dados
+    diccionario_copia = diccionario1.copy()
+    diccionario_copia.update(diccionario2)
+    
+    #Si la llave del diccionario union esta en los 2 diccionarios entonces se pone el valor del primero
+    for i in diccionario_copia:
+        if i in diccionario1 and i in diccionario2:
+            diccionario_copia[i] = diccionario1[i]
+    
+    return diccionario_copia
+
+if __name__ == "__main__":
+    #Los dos diccionarios con claves repetidas (Colombia, Corea del Sur y Sudáfrica)
+    diccionario1 = {"Colombia":57, "Bolivia":591, "EEUU":1, "Uruguay":598, "Ucrania":380, "Corea del Sur":82, "Arabia Saudita": 966, "Sudafrica":27, "Argelia":213}
+    diccionario2 = {"Colombia":3, "Ghana":233, "Australia":61, "Irán":98, "Yemen":967, "Corea del Sur":972, "China":86, "Reino Unido":44, "Sudafrica":20, "Belgica":32}
+    diccionario_final = mezclar_diccionarios(diccionario1, diccionario2)
+    print(diccionario_final)
+```
+
 ## 3. Dado el JSON:
 ```JSON
 {
