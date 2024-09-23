@@ -2,7 +2,27 @@
 
 ## 1. Desarrollar un algoritmo que imprima de manera ascendente los valores (todos del mismo tipo) de un diccionario.
 
-## 2. Desarrollar una función que reciba dos diccionarios como parametros y los mezcle, es decir, que se construya un nuevo diccionario con las llaves de los dos diccionarios; si hay una clave repetida en ambos diccionarios, se debe asignar el valor que tenga la clave en el primer diccionario.
+```python
+#1. Desarrollar un algoritmo que imprima de manera ascendente los valores (todos del mismo tipo) de un diccionario.
+
+def ordenar_diccionario(diccionario):
+    #Funcion para ordenar las claves del diccionario ascendentemente
+    valores_diccionario = list(diccionario.values())
+    
+    valores_diccionario_ordenados = sorted(valores_diccionario)
+    
+    return valores_diccionario_ordenados
+
+if __name__ == "__main__":
+    #Se decide que diccionario va a ser el elegido
+    diccionario_elegido = {"Colombia":57, "Bolivia":591, "EEUU":1, "Uruguay":598, "Ucrania":380, "Corea del Sur":82, "Arabia Saudita": 966, "Sudafrica":27, "Argelia":213}
+    diccionario_ordenado = ordenar_diccionario(diccionario_elegido)
+    print("Los valores del diccionario ordenados ascendentemente: ")
+    for i in diccionario_ordenado:
+        print(i)
+```
+
+## 2. Desarrollar una función que reciba dos diccionarios como parámetros y los mezcle, es decir, que se construya un nuevo diccionario con las llaves de los dos diccionarios; si hay una clave repetida en ambos diccionarios, se debe asignar el valor que tenga la clave en el primer diccionario.
 
 ## 3. Dado el JSON:
 ```JSON
